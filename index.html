@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfect Line Rent A Car</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      <div class="nav-logo-text">Perfect<span>Line</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#booking" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#fleet" class="mobile-link">Fleet</a>
+  <a href="#why" class="mobile-link">Why Us</a>
+  <a href="#booking" class="mobile-link">Booking</a>
+  <a href="#reviews" class="mobile-link">Reviews</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#booking" class="mobile-link" style="color:var(--gold)">Book Now</a>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <i class="fas fa-check-circle"></i>
+  <span id="toastMsg">Checking availability...</span>
+</div>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fas fa-gem"></i> Premium Car Rental</div>
+    <h1 class="hero-title">Drive Your<br><span class="gold">Dream</span> Today</h1>
+    <p class="hero-sub">Premium Cars. Affordable Prices. Instant Booking.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Now</a>
+      <a href="#fleet" class="btn-secondary"><i class="fas fa-car"></i> View Fleet</a>
+    </div>
+  </div>
+</header>
+
+<!-- Featured Cars -->
+<section class="fleet" id="fleet">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-label">Our Fleet</div>
+        <h2 class="section-title">Featured Vehicles</h2>
+        <p class="section-desc">Choose from our handpicked selection of premium and budget-friendly vehicles, all maintained to the highest standards.</p>
+      </div>
+    </div>
+    <div class="car-grid" id="carGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="section-header reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">The Perfect Line Difference</h2>
+      <p class="section-desc" style="margin:0 auto;">We go beyond just renting cars — we deliver experiences built on trust, quality, and convenience.</p>
+    </div>
+    <div class="why-grid" id="whyGrid">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- Booking -->
+<section class="booking-section" id="booking">
+  <div class="container">
+    <div class="section-header reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;">
+      <div class="section-label">Reservation</div>
+      <h2 class="section-title">Book Your Ride</h2>
+      <p class="section-desc" style="margin:0 auto;">Fill in the details below and we'll get you on the road in minutes.</p>
+    </div>
+    <div class="booking-wrapper reveal">
+      <div class="booking-glow"></div>
+      <form class="booking-form" id="bookingForm" onsubmit="return false;">
+        <div class="form-group">
+          <label class="form-label">Pick-up Location</label>
+          <input type="text" class="form-input" placeholder="City or airport" id="pickupLoc" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Drop-off Location</label>
+          <input type="text" class="form-input" placeholder="City or airport" id="dropoffLoc" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pick-up Date</label>
+          <input type="date" class="form-input" id="pickupDate" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Return Date</label>
+          <input type="date" class="form-input" id="returnDate" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pick-up Time</label>
+          <input type="time" class="form-input" id="pickupTime" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Vehicle Type</label>
+          <select class="form-select" id="vehicleType">
+            <option value="">Any Vehicle</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="luxury">Luxury</option>
+            <option value="economy">Economy</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="+1 (555) 000-0000" id="phoneNum">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="you@email.com" id="emailAddr">
+        </div>
+        <button type="button" class="btn-check" id="checkBtn">
+          <i class="fas fa-search"></i> Check Availability
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-header reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center;">
+      <div class="section-label">Testimonials</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-desc" style="margin:0 auto;">Real feedback from real people who trusted us with their journey.</p>
+    </div>
+  </div>
+  <div style="overflow:hidden;padding:10px 0;">
+    <div class="reviews-track" id="reviewsTrack">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1449965408869-ebd13bc9e5a8?w=800&q=80" alt="Luxury car showroom" loading="lazy">
+        <div class="about-img-border"></div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title" style="margin-bottom:24px;">Redefining Car Rental Experience</h2>
+        <p>Perfect Line Rent A Car provides premium and budget-friendly vehicles for all your travel needs. We focus on comfort, reliability, and customer satisfaction. Whether it's a business trip, family vacation, or a special occasion, our diverse fleet and dedicated team ensure every ride is memorable.</p>
+        <div class="about-features">
+          <div class="about-feature"><i class="fas fa-check"></i> Fully insured vehicles</div>
+          <div class="about-feature"><i class="fas fa-check"></i> No hidden charges</div>
+          <div class="about-feature"><i class="fas fa-check"></i> Free cancellation</div>
+          <div class="about-feature"><i class="fas fa-check"></i> Airport pickup & drop</div>
+          <div class="about-feature"><i class="fas fa-check"></i> GPS navigation included</div>
+          <div class="about-feature"><i class="fas fa-check"></i> 24/7 roadside assist</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <div class="nav-logo-icon"></div>
+          <div class="nav-logo-text">Perfect<span>Line</span></div>
+        </a>
+        <p>Premium car rental service delivering luxury and reliability since 2016. Your journey, our commitment.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Quick Links</div>
+        <a href="#fleet">Our Fleet</a>
+        <a href="#booking">Reservations</a>
+        <a href="#about">About Us</a>
+        <a href="#reviews">Testimonials</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Vehicle Types</div>
+        <a href="#">Sedans</a>
+        <a href="#">SUVs</a>
+        <a href="#">Luxury Cars</a>
+        <a href="#">Economy</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Support</div>
+        <a href="#">Help Center</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2025 Perfect Line Rent A Car. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
